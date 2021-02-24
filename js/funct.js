@@ -48,7 +48,7 @@ const sqr2 = x => x * x;
 
 console.log("this is sqr1 : ", sqr1(10));
 console.log("this is sqr2 : ", sqr2(10));
-console.log("this is work too ",sqr1(4,"hello world"));
+console.log("this is work too ", sqr1(4, "hello world"));
 
 const horn = () => {
     return "Toot"
@@ -57,36 +57,48 @@ const horn = () => {
 console.log(horn());
 
 //call stack
-function chicken(){
+function chicken() {
     return egg()
 }
 
-function egg(){
+function egg() {
     return "i came first"
 }
 
 console.log(chicken())
 
 //optional argument
-function minus (a,b){
-    if (b==undefined) return -a
-    return a-b
+function minus(a, b) {
+    if (b == undefined) return -a
+    return a - b
 }
 console.log(minus(1))
-console.log(minus(10,11))
+console.log(minus(10, 11))
 
-function pow2(base, exp =2){
-    if (exp==0)return 1;
-    return base * pow2(base,exp-1)
+function pow2(base, exp = 2) {
+    if (exp == 0) return 1;
+    return base * pow2(base, exp - 1)
 }
 console.log(pow2(2));
-console.log(pow2(2,3));
+console.log(pow2(2, 3));
 
-function wrapValue(n){
+function wrapValue(n) {
     let local = n
-    return () => local 
+    return () => local
 }
 let wrap1 = wrapValue(100)
 let wrap2 = wrapValue(10)
 console.log(wrap1())
 console.log(wrap2());
+
+//recursion
+function findSolution(target) {
+    function find(current, history) {
+        if (current == target) return history
+        else if (current > target) return null
+        else return find(current + 5, "(%s)+5",history) || find(current * 3, "(%s)*3",history)
+    }
+    return find(1, "1")
+}
+
+console.log(findSolution(3));
