@@ -82,6 +82,7 @@ function pow2(base, exp = 2) {
 console.log(pow2(2));
 console.log(pow2(2, 3));
 
+//wrap value
 function wrapValue(n) {
     let local = n
     return () => local
@@ -102,3 +103,56 @@ function findSolution(target) {
 }
 
 console.log(findSolution(3));
+
+//growing function
+/*
+function printFarmInventory(cows, chickens){
+    let cowString = String(cows)
+    while (cowString.length<3) {
+        cowString = "0"+ cowString
+    }
+    console.log("%s Cows",cowString);
+    
+    let chickenString = String(chickens)
+    while (chickenString.length<3) {
+        chickenString = "0"+chickenString
+    }
+    console.log("%s Chickens\n%s Cows", chickenString,cowString);
+}
+printFarmInventory(10,10)
+*/
+function zeroPad(n, labels){
+    let stringNumber = String(n)
+    while (stringNumber.length<3) {
+        stringNumber = "0"+ stringNumber
+    }
+    console.log("%s %s",stringNumber,labels);
+}
+
+function printFarmInv(cows, chickens, pigs) {
+    zeroPad(cows,"Cows")
+    zeroPad(chickens,"Chickens")
+    zeroPad(pigs,"Pigs")
+}
+
+//exercise
+
+//min function
+function min(a,b) {
+    if (a<b) return a
+    else if(b<a) return b
+    return undefined
+}
+console.log(min(200,1));
+
+//bean counting
+function countB(word) {
+    const target = "B"
+    var result = 0;
+    for (let i = 0; i< String(word).length;++i) {
+        if (word[i]==target) result+=1
+    }
+    return result
+}
+console.log(countB("BaBa"));
+
