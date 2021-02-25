@@ -97,7 +97,7 @@ function findSolution(target) {
     function find(current, history) {
         if (current == target) return history
         else if (current > target) return null
-        else return find(current + 5, "(%s)+5",history) || find(current * 3, "(%s)*3",history)
+        else return find(current + 5, "(%s)+5", history) || find(current * 3, "(%s)*3", history)
     }
     return find(1, "1")
 }
@@ -121,38 +121,81 @@ function printFarmInventory(cows, chickens){
 }
 printFarmInventory(10,10)
 */
-function zeroPad(n, labels){
+function zeroPad(n, labels) {
     let stringNumber = String(n)
-    while (stringNumber.length<3) {
-        stringNumber = "0"+ stringNumber
+    while (stringNumber.length < 3) {
+        stringNumber = "0" + stringNumber
     }
-    console.log("%s %s",stringNumber,labels);
+    console.log("%s %s", stringNumber, labels);
 }
 
 function printFarmInv(cows, chickens, pigs) {
-    zeroPad(cows,"Cows")
-    zeroPad(chickens,"Chickens")
-    zeroPad(pigs,"Pigs")
+    zeroPad(cows, "Cows")
+    zeroPad(chickens, "Chickens")
+    zeroPad(pigs, "Pigs")
 }
 
 //exercise
 
 //min function
-function min(a,b) {
-    if (a<b) return a
-    else if(b<a) return b
+function min(a, b) {
+    if (a < b) return a
+    else if (b < a) return b
     return undefined
 }
-console.log(min(200,1));
+console.log(min(200, 1));
 
 //bean counting
 function countB(word) {
     const target = "B"
     var result = 0;
-    for (let i = 0; i< String(word).length;++i) {
-        if (word[i]==target) result+=1
+    for (let i = 0; i < String(word).length; ++i) {
+        if (word[i] == target) result += 1
+    }
+    return result
+}
+function countChar(word, target) {
+    var result = 0;
+    for (let i = 0; i < String(word).length; ++i) {
+        if (word[i] == target) result += 1
     }
     return result
 }
 console.log(countB("BaBa"));
+console.log(countChar("Baba", "b"));
 
+//array
+let listOfNumbers = [1,2,3,4]
+console.log(listOfNumbers[0])
+
+let doh = "Doh"
+console.log(doh.toUpperCase());
+
+let sequence = [5,4,3,2]
+sequence.push(1)
+sequence.pop()
+console.log(sequence)
+
+//objects
+let day1 = {
+    squirrel: false,
+    events :["work","","touched tree","pizza","running"]
+}
+console.log(day1.squirrel);
+day1.wolf = false
+
+console.log(day1.wolf);
+
+let anObject = {left:1,right:2}
+console.log(anObject.left);
+console.log(anObject.right);
+delete anObject.left
+console.log(anObject.left);
+console.log("left" in anObject);
+console.log("right" in anObject);
+
+console.log(Object.keys({x:0,y:0}));
+
+let objA = {a:1,b:2}
+Object.assign(objA,{b:3,c:4})
+console.log(objA);
