@@ -7,6 +7,13 @@ function repeat(n,action) {
 
 let labels = []
 repeat(5,i => {
-    labels.push(i)
+    labels.push(`Unit ${i+1}`)
 })
 console.log(labels);
+
+function greatherThan(n) {
+    return m => m > n
+}
+
+let greaterThan10 = greatherThan(10)
+console.log(greaterThan10(11));
