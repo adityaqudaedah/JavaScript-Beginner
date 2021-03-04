@@ -54,6 +54,21 @@ function filter(array, test) {
     }
     return passed
 }
+function map(array,transform) {
+    let mapped = []
+    for (let element of array){
+        mapped.push(transform(element))
+    }
+    return mapped
+}
 
-console.log(filter(SCRIPTS, script => script.living));
-console.log(SCRIPTS.filter(s=> s.direction=="tbtb"));
+//reduce function
+function reduce(array,combine,start) {
+    let current = start
+    for(let element of array){
+        current = combine(current,element)
+    }
+    return current
+}
+
+console.log(reduce([1,2,3,4],(a,b)=>a+b,0));
