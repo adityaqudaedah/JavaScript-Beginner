@@ -72,3 +72,26 @@ function reduce(array,combine,start) {
 }
 
 console.log(reduce([1,2,3,4],(a,b)=>a+b,0));
+
+let horseShoe = "🐴👟"
+console.log(horseShoe);
+
+//exercise
+let arrays = [[1, 2, 3], [4, 5], [6]]
+console.log(arrays.reduce((flat,current)=> flat.concat(current),[]));
+
+function loop(start,test,update,body){
+    for(let i = start;test(i);i=update(i)){
+        body(i)
+    }
+}
+
+loop(4,n => n>0,n=>n-1,console.log)
+
+function loop(start, test, update, body) {
+    for (let value = start; test(value); value = update(value)) {
+      body(value);
+    }
+  }
+  
+loop(3, n => n > 0, n => n - 1, console.log);
