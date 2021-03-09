@@ -65,3 +65,25 @@ Car.prototype.horn = sound => console.log(` Sound : ${sound}`)
 
 BMW.spec()
 BMW.horn("Beep")
+
+
+//class notation
+class Hero{
+    constructor(name,type, health) {
+        this.name = name
+        this.type = type
+        this.health = health
+    }
+
+    //methods
+    info(){
+        console.log(`
+        Hero names : ${this.name}
+        Hero type : ${this. type}
+        Helath : ${this.health}`)
+
+    }
+}
+
+let balmond = new Hero("Balmond","Tank",100)
+balmond.info()
