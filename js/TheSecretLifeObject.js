@@ -87,3 +87,25 @@ class Hero{
 
 let balmond = new Hero("Balmond","Tank",100)
 balmond.info()
+
+//overriding derived properties
+Hero.prototype.strength = 100
+console.log(balmond.strength)
+//overriding
+balmond.strength = 120
+
+console.log(balmond.strength)
+console.log(Hero.prototype.strength);
+
+console.log(Object.prototype.toString.call([1,2]))
+
+//class as expression and statement
+let object = new class{
+    getWord(){
+        return "hello"
+    }
+}
+
+console.log(object.getWord())
+
+//Map
