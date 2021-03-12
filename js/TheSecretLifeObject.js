@@ -109,3 +109,19 @@ let object = new class{
 console.log(object.getWord())
 
 //Map
+let ages = {
+    Boris : 32,
+    Liang : 22,
+    Julia : 12
+}
+
+console.log(`Julia is ${ages["Julia"]}`)
+console.log(`is Jack's age known? `, "Jack" in ages)
+
+let age = new Map()
+age.set("Boris",11)
+age.set("Julia",22)
+age.set("Liang",33)
+console.log(`Julia is ${age.get("Julia")}`);
+console.log(age.has("toString"))
+console.log("Is Jack's age known?", age.has("Jack"))
