@@ -54,6 +54,7 @@ Rabbit.prototype.speak = function (word) {
 let weirdRabbit = new Rabbit("Weird")
 weirdRabbit.speak("Y'all bitches")
 
+// Polymorphism concept
 Rabbit.prototype.toString = function () {
     return `a ${this.type} rabbit`
 }
