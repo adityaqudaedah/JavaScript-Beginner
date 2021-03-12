@@ -54,6 +54,10 @@ Rabbit.prototype.speak = function (word) {
 let weirdRabbit = new Rabbit("Weird")
 weirdRabbit.speak("Y'all bitches")
 
+Rabbit.prototype.toString = function () {
+    return `a ${this.type} rabbit`
+}
+console.log(String(weirdRabbit));
 
 function Car(type) {
     this.type = type
@@ -125,3 +129,6 @@ age.set("Liang",33)
 console.log(`Julia is ${age.get("Julia")}`);
 console.log(age.has("toString"))
 console.log("Is Jack's age known?", age.has("Jack"))
+
+console.log({x: 0}.hasOwnProperty("x"))
+console.log({x: 0}.hasOwnProperty("toString"))
