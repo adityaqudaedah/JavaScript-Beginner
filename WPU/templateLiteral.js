@@ -10,3 +10,5 @@ const el = `<div class="mhs">
     <h2>${mhs.nama}</h2>
     <span class="npm">${mhs.npm}</span>
 </div>`
+
+console.log(el)
